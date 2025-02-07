@@ -1,0 +1,242 @@
+:root {
+    --body-bg: #f5f5f5;
+    --bg-color: #e7e5e5;
+    --button-bg: rgb(89, 170, 51);
+    --task-bg: #ffffff;
+    --btn-fontsize: 18px;
+    --color: black;
+    --btn-hover-bg: rgba(89, 170, 51, 0.67);
+    --task-list-bg: #ffffff;
+    --delete-btn-bg: #ff0000;
+    --delete-btn-hover-bg: rgb(255, 0, 0 , 0.67);
+    --task-border: grey 2px solid;
+}
+
+
+/* темная тема */
+.dark-mode {
+    --body-bg: #121212;
+    --bg-color: #121212;
+    --text-color: white;
+    --button-bg: #e2a809;
+    --btn-hover-bg: #c29109;
+    --task-bg: #333;
+    --task-complete-bg: #666;
+    --color: white;
+    --task-list-bg: #333;
+}
+
+h1 {
+    color: var(--color);
+}
+
+.todo-container {
+    height: auto;
+    min-height: 350px;
+    width: 790px;
+    border: 2px solid grey;
+    background: var(--task-bg);
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    text-align: center;
+    margin: 20px;
+    color: var(--color);
+    transition: 1s;
+}
+
+button {
+    padding: 10px;
+    background: var(--button-bg);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    height: 63px;
+    width: 243px;
+    font-size: var(--btn-fontsize);
+}
+
+button:hover {
+    background-color: var(--btn-hover-bg);
+    transition: 0.1s;
+}
+.add-task-btn {
+    width: 193px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+input {
+    height: 43px;
+    width: 398px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    border: grey 2px solid;
+}
+
+
+
+
+/* задачи */
+.input-group {
+    margin-top: 25px;
+}
+
+#task-list {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: var(--task-border);
+    border-radius: 20px;
+    font-size: 16px;
+    padding-left: 30px;
+    margin-top: 10px;
+    height: 71px;
+    width: 611px;
+}
+
+
+.task-controls {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* кнопка удаления задачи */
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    width: 43px;
+    height: 43px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-btn:hover {
+    background-color: var(--delete-btn-hover-bg);
+    transition: 0.1s;
+}
+
+
+
+/* фейковый чекбокс */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+  
+
+/* скрываем чекбокс */
+.custom-checkbox input {
+    display: none; 
+}
+  
+/* стили для фейкового чекбокса */
+.custom-checkbox span {
+    width: 38px;
+    height: 38px;
+    border: var(--task-border);
+    display: inline-block;
+    position: relative;
+    border-radius: 4px;
+}
+
+/* стили чекбокса при нажатии */
+.custom-checkbox input:checked + span {
+    background-color: rgb(89, 170, 51);
+    border-color: rgb(89, 170, 51);
+}
+  
+ /* стили для галочки */
+.custom-checkbox input:checked + span::after {
+    content: "✔";
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+  
+/* стили для фейкового чекбокса при наведении */
+.custom-checkbox input:checked + span:hover {
+    background-color: rgba(89, 170, 51, 0.8);
+    border-color: rgba(89, 170, 51, 0.8);
+    transition: 0.1s;
+}
+
+
+/* адаптивность */
+@media (max-width: 920px) {
+    .todo-container {
+        width: 100%;
+        margin: 0  -12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .todo-container {
+        width: 100%;
+        margin: 0  -12px;
+    }
+    input {
+        width: 70%;
+
+    }
+    .task {
+        width: 80%;
+    }
+    .task-controls {
+        width: 20%;
+        height: 50px;
+        margin: 10px;
+        
+    }
+    .delete-btn {
+        width: 25px;
+        height: 25px;
+    }
+    .custom-checkbox span {
+        width: 20px;
+        height: 20px;
+    }
+    .custom-checkbox input:checked + span::after {
+        font-size: 12px;
+    }
+    button {
+        width: 140px;
+        height: 50px;
+    }
+}
+
