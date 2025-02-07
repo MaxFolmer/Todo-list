@@ -90,6 +90,7 @@ input {
 /* задачи */
 .input-group {
     margin-top: 25px;
+    margin-right: 20px;
 }
 
 #task-list {
