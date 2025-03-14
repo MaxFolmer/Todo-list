@@ -113,8 +113,12 @@ input {
     margin-top: 10px;
     height: 71px;
     width: 611px;
+    transition: all 0.5s;
 }
 
+.task:hover {
+    scale: 1.1;
+}
 
 .task-controls {
     display: flex;
